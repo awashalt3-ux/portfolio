@@ -1,0 +1,72 @@
+[general]
+
+#### Address & Root dir
+host = "::"
+port = 8080
+root = "/public"
+
+#### Logging
+log-level = "error"
+
+#### Cache Control headers
+cache-control-headers = true
+
+#### Auto Compression
+compression = true
+
+#### Error pages
+# Note: If a relative path is used then it will be resolved under the root directory.
+page404 = "./404.html"
+
+#### HTTP/2 + TLS
+# http2 = false
+
+#### CORS & Security headers
+# cors-allow-origins = ""
+
+#### Directory listing
+directory-listing = false
+
+#### File descriptor binding
+# fd = ""
+
+#### Worker threads
+threads-multiplier = 1
+
+#### Grace period after a graceful shutdown
+grace-period = 0
+
+#### Redirect to trailing slash in the requested directory uri
+redirect-trailing-slash = true
+
+#### Check for existing pre-compressed files
+compression-static = true
+
+#### Health-check endpoint (GET or HEAD `/health`)
+health = true
+
+#### List of index files
+index-files = "index.html, index.htm"
+
+[advanced]
+
+#### Security headers
+[[advanced.headers]]
+source = "**/*"
+[advanced.headers.headers]
+X-Content-Type-Options = "nosniff"
+Referrer-Policy = "strict-origin-when-cross-origin"
+X-Frame-Options = "SAMEORIGIN"
+Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+#### Revalidation-friendly caching for CSS and JS
+[[advanced.headers]]
+source = "**/*.{css,js}"
+[advanced.headers.headers]
+Cache-Control = "public, max-age=300, must-revalidate"
+
+#### Longer caching for images and the web manifest
+[[advanced.headers]]
+source = "**/*.{svg,png,webmanifest}"
+[advanced.headers.headers]
+Cache-Control = "public, max-age=86400"

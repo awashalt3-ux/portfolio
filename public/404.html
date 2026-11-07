@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#10110f" />
+  <meta name="robots" content="noindex, follow" />
+  <title>Page introuvable — Orpheus</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <style>
+    :root{--bg:#10110f;--text:#f0f1e9;--muted:#a2a99a;--accent:#c5f36b;--line:rgba(226,235,211,.12);--mono:'DM Mono',ui-monospace,SFMono-Regular,monospace}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;display:grid;place-items:center;padding:32px;background:var(--bg);color:var(--text);font-family:Manrope,Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.12;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.15'/%3E%3C/svg%3E")}
+    main{position:relative;width:min(680px,100%);border-top:1px solid var(--line);padding-top:38px}
+    .brand{display:inline-flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;font-weight:800;font-size:14px;letter-spacing:-.5px}
+    .brand-mark{width:32px;height:32px;border:1px solid rgba(197,243,107,.6);border-radius:10px;display:grid;place-items:center;font-size:22px;line-height:1;letter-spacing:-2px}
+    .brand-mark span{color:var(--accent)}
+    .kicker{margin:52px 0 18px;color:#8a9380;font:9px var(--mono);letter-spacing:.14em}
+    h1{margin:0;font-size:clamp(66px,16vw,132px);line-height:.88;letter-spacing:-.09em;font-weight:800}
+    h1 em{font-style:normal;color:var(--accent)}
+    p{max-width:420px;margin:28px 0 34px;color:var(--muted);font-size:13px;line-height:1.9}
+    .actions{display:flex;flex-wrap:wrap;align-items:center;gap:18px}
+    .button{display:inline-flex;align-items:center;gap:12px;padding:14px 18px;background:var(--accent);color:#171a13;font-size:11px;font-weight:800;text-decoration:none}
+    .button:hover{background:#d4ff7e}
+    .link{color:#c3c9ba;font-size:11px;font-weight:700;text-decoration:none}
+    .link:hover{color:var(--accent)}
+    footer{margin-top:70px;padding-top:18px;border-top:1px solid var(--line);color:#697064;font:8px var(--mono);letter-spacing:.1em}
+  </style>
+</head>
+<body>
+  <main>
+    <a class="brand" href="/"><span class="brand-mark">o<span>.</span></span><span>orpheus<span style="color:#c5f36b">/</span>web</span></a>
+    <div class="kicker">ERREUR 404 — PAGE INTROUVABLE</div>
+    <h1>Perdu<br />en <em>chemin ?</em></h1>
+    <p>La page que tu cherches n'existe pas, a été déplacée ou contient une adresse incorrecte. Le portfolio, lui, est toujours là.</p>
+    <div class="actions">
+      <a class="button" href="/">Retour à l'accueil <span aria-hidden="true">↗</span></a>
+      <a class="link" href="/#projets">Voir les projets</a>
+    </div>
+    <footer>ORPHEUS / WEB — FAIT AVEC INTENTION.</footer>
+  </main>
+</body>
+</html>
