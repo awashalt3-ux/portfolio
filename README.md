@@ -2,15 +2,26 @@
 
 Portfolio personnel d'Orpheus, développeur web indépendant. Site statique, responsive et sans étape de build : HTML, CSS et JavaScript natifs.
 
+## URL publiques
+
+- **GitHub Pages (en ligne)** : <https://awashalt3-ux.github.io/portfolio/>
+- **Wasmer Edge (cible)** : <https://orpheus-web.wasmer.app/>
+
+Le site est déployé automatiquement sur GitHub Pages à chaque push sur `main`, via `.github/workflows/pages.yml`.
+
 ## Structure
 
 ```
 .
+├── .github/workflows/
+│   └── pages.yml         # Déploiement automatique sur GitHub Pages
 ├── app.yaml              # Configuration de l'app Wasmer Edge
 ├── Staticfile            # Racine servie par Static Web Server (public)
 ├── wasmer.toml           # Manifeste du package Wasmer
 ├── settings/
 │   └── config.toml       # En-têtes, cache, page 404
+├── scripts/
+│   └── set-site-url.mjs  # Change l'URL publique du site
 └── public/               # Fichiers réellement servis
     ├── index.html
     ├── styles.css
@@ -65,16 +76,23 @@ Le projet est prêt pour Wasmer Edge (`app.yaml`, `Staticfile`, `wasmer.toml`).
 
 L'URL attendue est <https://orpheus-web.wasmer.app>. Si le nom est déjà pris, Wasmer ajoute un suffixe ou te demande d'en choisir un autre.
 
-### Mettre à jour l'URL du site
+Une fois le site déployé sur Wasmer, fais de cette adresse l'URL principale :
+
+```bash
+node scripts/set-site-url.mjs https://orpheus-web.wasmer.app
+```
+
+Le script met à jour `canonical`, `og:url`, `og:image`, `twitter:image`, `robots.txt`, `sitemap.xml` et la page 404. Commit et push ensuite les modifications.
+
+### Mettre à jour l'URL du site manuellement
 
 L'URL canonique et l'image Open Graph sont définies en absolu dans :
 
-- `public/index.html` : `canonical`, `og:url`, `og:image`, `twitter:image`
+- `public/index.html` : `canonical`, `og:url`, `og:image`, `twitter:image`, JSON-LD
 - `public/robots.txt` : `Sitemap`
 - `public/sitemap.xml` : `loc`
+- `public/404.html` : liens de retour et favicon
 - `public/site.webmanifest` : `start_url` (relatif, aucune modification nécessaire)
-
-Si l'adresse finale diffère de `https://orpheus-web.wasmer.app`, remplace-la dans ces fichiers.
 
 ### Déploiement automatique depuis GitHub
 

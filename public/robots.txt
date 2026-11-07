@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://orpheus-web.wasmer.app/sitemap.xml
+Sitemap: https://awashalt3-ux.github.io/portfolio/sitemap.xml
